@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="calculator">
+        <br>
+        <h2>CGPA Calculator</h2>
+        <form id="cgpaForm">
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" required>
+
+            <label for="grade">Grade:</label>
+            <select id="grade">
+                <option value="AA">AA</option>
+                <option value="AB">AB</option>
+                <option value="BB">BB</option>
+                <option value="BC">BC</option>
+                <option value="CC">CC</option>
+                <option value="CD">CD</option>
+                <option value="DD">DD</option>
+                <option value="FF">FF</option>
+            </select>
+
+            <label for="credit">Credit:</label>
+            <input type="number" id="credit" min="1" required>
+
+            <button type="button" onclick="addSubject()">
+                  Add / Edit Subject
+              </button>
+        </form>
+
+
+        <table id="subjectTable">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                    <th>Credit</th>
+                    <th>Grade Points</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="subjectList"></tbody>
+        </table>
+
+        <br>
+        <label for="prevCGPA">Previous CGPA:</label>
+        <input type="number" id="prevCGPA" step="0.01" min="0" max="10"><br>
+
+        <label for="prevCredits">Previous Total Credits:</label>
+        <input type="number" id="prevCredits" min="0"><br>
+ 
+
+        <button onclick="calculateCGPA()">Calculate CGPA</button>
+        <h3>CGPA: <span id="cgpa"></span></h3>
+
+
+        
+        <button type="button" onclick="resetForm()">
+              Reset
+          </button>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
